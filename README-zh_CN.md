@@ -17,13 +17,13 @@ Monaco SQL Languages 是一个基于 Monaco Editor 的 SQL 语言项目，从 [m
 
 ## 已支持的 SQL 语言类型
 
--   MySQL
--   FLinkSQL
--   SparkSQL
--   HiveSQL
--   TrinoSQL (PrestoSQL)
--   PostgreSQL
--   PL/SQL
+- MySQL
+- FLinkSQL
+- SparkSQL
+- HiveSQL
+- TrinoSQL (PrestoSQL)
+- PostgreSQL
+- PL/SQL
 
 **自动补全功能支持**
 
@@ -53,97 +53,97 @@ npm install monaco-sql-languages
 
 ## 集成
 
--   [集成 ESM 版本](https://github.com/microsoft/monaco-editor/blob/main/docs/integrate-esm.md)
--   [集成 AMD 版本](https://github.com/microsoft/monaco-editor/blob/main/docs/integrate-amd.md#integrating-the-amd-version-of-the-monaco-editor)
+- [集成 ESM 版本](https://github.com/microsoft/monaco-editor/blob/main/docs/integrate-esm.md)
+- [集成 AMD 版本](https://github.com/microsoft/monaco-editor/blob/main/docs/integrate-amd.md#integrating-the-amd-version-of-the-monaco-editor)
 
 ### 使用 Monaco Editor WebPack Plugin
 
--   安装 Monaco Editor Webpack Plugin
+- 安装 Monaco Editor Webpack Plugin
 
-    ```shell
-    npm install monaco-editor-webpack-plugin
-    ```
+  ```shell
+  npm install monaco-editor-webpack-plugin
+  ```
 
--   在 Webpack 配置中应用 Monaco Editor Webpack Plugin
+- 在 Webpack 配置中应用 Monaco Editor Webpack Plugin
 
-    ```typescript
-    const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
-    const path = require('path');
+  ```typescript
+  const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
+  const path = require('path');
 
-    const monacoWebpackPlugin = new MonacoWebpackPlugin({
-    	features: [], // 包含你所需要的 Monaco Editor 功能
-    	languages: [], // 包含你所需要的 Monaco Editor 内置语言功能
-    	customLanguages: [
-    		// 包含 Monaco SQL Languages 所提供的语言功能
-    		{
-    			label: 'mysql',
-    			entry: 'monaco-sql-languages/out/esm/mysql/mysql.contribution',
-    			worker: {
-    				id: 'monaco-sql-languages/out/esm/mysql/mySQLWorker',
-    				entry: 'monaco-sql-languages/out/esm/mysql/mysql.worker'
-    			}
-    		},
-    		{
-    			label: 'flinksql',
-    			entry: 'monaco-sql-languages/out/esm/flinksql/flinksql.contribution',
-    			worker: {
-    				id: 'monaco-sql-languages/out/esm/flinksql/flinkSQLWorker',
-    				entry: 'monaco-sql-languages/out/esm/flinksql/flinksql.worker'
-    			}
-    		},
-    		{
-    			label: 'sparksql',
-    			entry: 'monaco-sql-languages/out/esm/sparksql/sparksql.contribution',
-    			worker: {
-    				id: 'monaco-sql-languages/out/esm/sparksql/sparkSQLWorker',
-    				entry: 'monaco-sql-languages/out/esm/sparksql/sparksql.worker'
-    			}
-    		},
-    		{
-    			label: 'hivesql',
-    			entry: 'monaco-sql-languages/out/esm/hivesql/hivesql.contribution',
-    			worker: {
-    				id: 'monaco-sql-languages/out/esm/hivesql/hiveSQLWorker',
-    				entry: 'monaco-sql-languages/out/esm/hivesql/hivesql.worker'
-    			}
-    		},
-    		{
-    			label: 'trinosql',
-    			entry: 'monaco-sql-languages/out/esm/trinosql/trinosql.contribution',
-    			worker: {
-    				id: 'monaco-sql-languages/out/esm/trinosql/TrinoSQLWorker',
-    				entry: 'monaco-sql-languages/out/esm/trinosql/trinosql.worker'
-    			}
-    		},
-    		{
-    			label: 'pgsql',
-    			entry: 'monaco-sql-languages/out/esm/pgsql/pgsql.contribution',
-    			worker: {
-    				id: 'monaco-sql-languages/out/esm/pgsql/PgSQLWorker',
-    				entry: 'monaco-sql-languages/out/esm/pgsql/pgsql.worker'
-    			}
-    		},
-    		{
-    			label: 'plsql',
-    			entry: 'monaco-sql-languages/out/esm/plsql/plsql.contribution',
-    			worker: {
-    				id: 'monaco-sql-languages/out/esm/plsql/plSQLWorker',
-    				entry: 'monaco-sql-languages/out/esm/plsql/plsql.worker'
-    			}
-    		}
-    	]
-    });
+  const monacoWebpackPlugin = new MonacoWebpackPlugin({
+  	features: [], // 包含你所需要的 Monaco Editor 功能
+  	languages: [], // 包含你所需要的 Monaco Editor 内置语言功能
+  	customLanguages: [
+  		// 包含 Monaco SQL Languages 所提供的语言功能
+  		{
+  			label: 'mysql',
+  			entry: 'monaco-sql-languages/out/esm/mysql/mysql.contribution',
+  			worker: {
+  				id: 'monaco-sql-languages/out/esm/mysql/mySQLWorker',
+  				entry: 'monaco-sql-languages/out/esm/mysql/mysql.worker'
+  			}
+  		},
+  		{
+  			label: 'flinksql',
+  			entry: 'monaco-sql-languages/out/esm/flinksql/flinksql.contribution',
+  			worker: {
+  				id: 'monaco-sql-languages/out/esm/flinksql/flinkSQLWorker',
+  				entry: 'monaco-sql-languages/out/esm/flinksql/flinksql.worker'
+  			}
+  		},
+  		{
+  			label: 'sparksql',
+  			entry: 'monaco-sql-languages/out/esm/sparksql/sparksql.contribution',
+  			worker: {
+  				id: 'monaco-sql-languages/out/esm/sparksql/sparkSQLWorker',
+  				entry: 'monaco-sql-languages/out/esm/sparksql/sparksql.worker'
+  			}
+  		},
+  		{
+  			label: 'hivesql',
+  			entry: 'monaco-sql-languages/out/esm/hivesql/hivesql.contribution',
+  			worker: {
+  				id: 'monaco-sql-languages/out/esm/hivesql/hiveSQLWorker',
+  				entry: 'monaco-sql-languages/out/esm/hivesql/hivesql.worker'
+  			}
+  		},
+  		{
+  			label: 'trinosql',
+  			entry: 'monaco-sql-languages/out/esm/trinosql/trinosql.contribution',
+  			worker: {
+  				id: 'monaco-sql-languages/out/esm/trinosql/TrinoSQLWorker',
+  				entry: 'monaco-sql-languages/out/esm/trinosql/trinosql.worker'
+  			}
+  		},
+  		{
+  			label: 'pgsql',
+  			entry: 'monaco-sql-languages/out/esm/pgsql/pgsql.contribution',
+  			worker: {
+  				id: 'monaco-sql-languages/out/esm/pgsql/PgSQLWorker',
+  				entry: 'monaco-sql-languages/out/esm/pgsql/pgsql.worker'
+  			}
+  		},
+  		{
+  			label: 'plsql',
+  			entry: 'monaco-sql-languages/out/esm/plsql/plsql.contribution',
+  			worker: {
+  				id: 'monaco-sql-languages/out/esm/plsql/plSQLWorker',
+  				entry: 'monaco-sql-languages/out/esm/plsql/plsql.worker'
+  			}
+  		}
+  	]
+  });
 
-    module.exports = {
-    	entry: './index.js',
-    	output: {
-    		path: path.resolve(__dirname, 'dist'),
-    		filename: 'app.js'
-    	},
-    	module: {},
-    	plugins: [monacoEditorPlugin] // 应用 monacoEditorPlugin
-    };
-    ```
+  module.exports = {
+  	entry: './index.js',
+  	output: {
+  		path: path.resolve(__dirname, 'dist'),
+  		filename: 'app.js'
+  	},
+  	module: {},
+  	plugins: [monacoEditorPlugin] // 应用 monacoEditorPlugin
+  };
+  ```
 
 更多 Monaco Editor Webpack Plugin 的选项, 看[这里](https://github.com/microsoft/monaco-editor/tree/main/webpack-plugin#options).
 
@@ -209,88 +209,88 @@ Vite 使用示例看 <https://github.com/DTStack/monaco-sql-languages/blob/main/
 
 1. **导入 language contributions 文件**
 
-    ```typescript
-    // 暂不支持自动补全功能的语言，直接导入对应的 contribution 文件
-    import 'monaco-sql-languages/out/esm/mysql/mysql.contribution';
-    import 'monaco-sql-languages/out/esm/plsql/plsql.contribution';
-    import 'monaco-sql-languages/out/esm/pgsql/pgsql.contribution';
-    import 'monaco-sql-languages/out/esm/sql/sql.contribution';
+   ```typescript
+   // 暂不支持自动补全功能的语言，直接导入对应的 contribution 文件
+   import 'monaco-sql-languages/out/esm/mysql/mysql.contribution';
+   import 'monaco-sql-languages/out/esm/plsql/plsql.contribution';
+   import 'monaco-sql-languages/out/esm/pgsql/pgsql.contribution';
+   import 'monaco-sql-languages/out/esm/sql/sql.contribution';
 
-    // 支持自定补全功能的语言，先导入对应语言的注册方法
-    import {
-    	registerHiveSQLLanguage,
-    	registerFlinkSQLLanguage,
-    	registerSparkSQLLanguage,
-    	registerTrinoSQLLanguage
-    } from 'monaco-sql-languages';
+   // 支持自定补全功能的语言，先导入对应语言的注册方法
+   import {
+   	registerHiveSQLLanguage,
+   	registerFlinkSQLLanguage,
+   	registerSparkSQLLanguage,
+   	registerTrinoSQLLanguage
+   } from 'monaco-sql-languages';
 
-    // 注册语言， completionService 是非必要的。
-    registerFlinkSQLLanguage();
-    registerHiveSQLLanguage();
-    registerSparkSQLLanguage();
-    registerTrinoSQLLanguage();
+   // 注册语言， completionService 是非必要的。
+   registerFlinkSQLLanguage();
+   registerHiveSQLLanguage();
+   registerSparkSQLLanguage();
+   registerTrinoSQLLanguage();
 
-    // 或者你可以通过下面的方式一次性导入所有的语言功能
-    // import 'monaco-sql-languages/out/esm/monaco.contribution';
-    ```
+   // 或者你可以通过下面的方式一次性导入所有的语言功能
+   // import 'monaco-sql-languages/out/esm/monaco.contribution';
+   ```
 
 2. **创建 completionService（非必要）**
 
-    默认情况下，自动补全项中只包含关键字, 但是你可以通过 `completionService` 自定义自动补全项.
+   默认情况下，自动补全项中只包含关键字, 但是你可以通过 `completionService` 自定义自动补全项.
 
-    ```typescript
-    import { languages } from 'monaco-editor/esm/vs/editor/editor.api';
-    import { CompletionService, ICompletionItem, SyntaxContextType } from 'monaco-sql-languages';
+   ```typescript
+   import { languages } from 'monaco-editor/esm/vs/editor/editor.api';
+   import { CompletionService, ICompletionItem, SyntaxContextType } from 'monaco-sql-languages';
 
-    import { languages } from 'monaco-editor/esm/vs/editor/editor.api';
-    import { CompletionService, ICompletionItem, SyntaxContextType } from 'monaco-sql-languages';
+   import { languages } from 'monaco-editor/esm/vs/editor/editor.api';
+   import { CompletionService, ICompletionItem, SyntaxContextType } from 'monaco-sql-languages';
 
-    const completionService: CompletionService = function (
-    	model,
-    	position,
-    	completionContext,
-    	suggestions
-    ) {
-    	return new Promise((resolve, reject) => {
-    		if (!suggestions) {
-    			return Promise.resolve([]);
-    		}
-    		const { keywords, syntax } = suggestions;
-    		const keywordsCompletionItems: ICompletionItem[] = keywords.map((kw) => ({
-    			label: kw,
-    			kind: languages.CompletionItemKind.Keyword,
-    			detail: 'keyword',
-    			sortText: '2' + kw
-    		}));
+   const completionService: CompletionService = function (
+   	model,
+   	position,
+   	completionContext,
+   	suggestions
+   ) {
+   	return new Promise((resolve, reject) => {
+   		if (!suggestions) {
+   			return Promise.resolve([]);
+   		}
+   		const { keywords, syntax } = suggestions;
+   		const keywordsCompletionItems: ICompletionItem[] = keywords.map((kw) => ({
+   			label: kw,
+   			kind: languages.CompletionItemKind.Keyword,
+   			detail: 'keyword',
+   			sortText: '2' + kw
+   		}));
 
-    		let syntaxCompletionItems: ICompletionItem[] = [];
+   		let syntaxCompletionItems: ICompletionItem[] = [];
 
-    		syntax.forEach((item) => {
-    			if (item.syntaxContextType === SyntaxContextType.DATABASE) {
-    				const databaseCompletions: ICompletionItem[] = [...]; // 一些数据库名自动补全项
-    				syntaxCompletionItems = [...syntaxCompletionItems, ...databaseCompletions];
-    			}
-    			if (item.syntaxContextType === SyntaxContextType.TABLE) {
-    				const tableCompletions: ICompletionItem[] = []; // 一些表名自动补全项
-    				syntaxCompletionItems = [...syntaxCompletionItems, ...tableCompletions];
-    			}
-    		});
+   		syntax.forEach((item) => {
+   			if (item.syntaxContextType === SyntaxContextType.DATABASE) {
+   				const databaseCompletions: ICompletionItem[] = [...]; // 一些数据库名自动补全项
+   				syntaxCompletionItems = [...syntaxCompletionItems, ...databaseCompletions];
+   			}
+   			if (item.syntaxContextType === SyntaxContextType.TABLE) {
+   				const tableCompletions: ICompletionItem[] = []; // 一些表名自动补全项
+   				syntaxCompletionItems = [...syntaxCompletionItems, ...tableCompletions];
+   			}
+   		});
 
-    		return [...syntaxCompletionItems, ...keywordsCompletionItems];
-    	});
-    };
+   		return [...syntaxCompletionItems, ...keywordsCompletionItems];
+   	});
+   };
 
-    registerFlinkSQLLanguage(completionService);
-    ```
+   registerFlinkSQLLanguage(completionService);
+   ```
 
 3. **创建 Monaco Editor 并指定语言**
 
-    ```typescript
-    monaco.editor.create(document.getElementById('container'), {
-    	value: 'select * from tb_test',
-    	language: 'flinksql' // languageId
-    });
-    ```
+   ```typescript
+   monaco.editor.create(document.getElementById('container'), {
+   	value: 'select * from tb_test',
+   	language: 'flinksql' // languageId
+   });
+   ```
 
 <br/>
 
@@ -300,9 +300,9 @@ Vite 使用示例看 <https://github.com/DTStack/monaco-sql-languages/blob/main/
 
 Monaco SQL Languages 提供了名为 `vsPlusTheme` 的内置主题。 `vsPlusTheme` 灵感来源于 vscode default plus 颜色主题，内部包含三种风格的主题:
 
--   `darkTheme`: 暗黑色主题，继承自 Monaco 内置主题 `vs-dark`;
--   `lightTheme`: 亮色主题， 继承自 Monaco 内置主题 `vs`;
--   `hcBlackTheme`: 黑色高对比度主题，继承自 Monaco 内置主题 `hc-black`;
+- `darkTheme`: 暗黑色主题，继承自 Monaco 内置主题 `vs-dark`;
+- `lightTheme`: 亮色主题， 继承自 Monaco 内置主题 `vs`;
+- `hcBlackTheme`: 黑色高对比度主题，继承自 Monaco 内置主题 `hc-black`;
 
 **使用 Monaco SQL Languages 内置主题 vsPlusTheme**
 
@@ -352,32 +352,32 @@ editor.defineTheme('my-theme', myThemeData);
 
 ## 开发者：本地开发
 
--   初始化设置
+- 初始化设置
 
-    ```shell
-    pnpm install
-    ```
+  ```shell
+  pnpm install
+  ```
 
--   本地启动 web demo
+- 本地启动 web demo
 
-    ```shell
-    pnpm watch-esm
-    cd website
-    pnpm install
-    pnpm dev
-    ```
+  ```shell
+  pnpm watch-esm
+  cd website
+  pnpm install
+  pnpm dev
+  ```
 
--   打包
+- 打包
 
-    ```shell
-    pnpm compile
-    ```
+  ```shell
+  pnpm compile
+  ```
 
--   单元测试
-    ```
-    pnpm compile
-    pnpm test
-    ```
+- 单元测试
+  ```
+  pnpm compile
+  pnpm test
+  ```
 
 <br/>
 

@@ -19,13 +19,13 @@ Online Preview: <https://dtstack.github.io/monaco-sql-languages/>
 
 ## Supported SQL Languages
 
--   MySQL
--   FLinkSQL
--   SparkSQL
--   HiveSQL
--   TrinoSQL (PrestoSQL)
--   PostgreSQL
--   PL/SQL
+- MySQL
+- FLinkSQL
+- SparkSQL
+- HiveSQL
+- TrinoSQL (PrestoSQL)
+- PostgreSQL
+- PL/SQL
 
 **Supported CodeCompletion SQL Languages**
 
@@ -55,97 +55,97 @@ npm install monaco-sql-languages
 
 ## Integrating
 
--   [Integrating the ESM version](https://github.com/microsoft/monaco-editor/blob/main/docs/integrate-esm.md)
--   [Integrating the AMD version](https://github.com/microsoft/monaco-editor/blob/main/docs/integrate-amd.md#integrating-the-amd-version-of-the-monaco-editor)
+- [Integrating the ESM version](https://github.com/microsoft/monaco-editor/blob/main/docs/integrate-esm.md)
+- [Integrating the AMD version](https://github.com/microsoft/monaco-editor/blob/main/docs/integrate-amd.md#integrating-the-amd-version-of-the-monaco-editor)
 
 ### Using the Monaco Editor Webpack Plugin
 
--   Install Monaco Editor Webpack Plugin
+- Install Monaco Editor Webpack Plugin
 
-    ```shell
-    npm install monaco-editor-webpack-plugin
-    ```
+  ```shell
+  npm install monaco-editor-webpack-plugin
+  ```
 
--   Apply Monaco Editor Webpack Plugin in webpack config
+- Apply Monaco Editor Webpack Plugin in webpack config
 
-    ```typescript
-    const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
-    const path = require('path');
+  ```typescript
+  const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
+  const path = require('path');
 
-    const monacoWebpackPlugin = new MonacoWebpackPlugin({
-    	features: [], // Include only a subset of the editor features
-    	languages: [], // Include only a subset of the monaco built-in languages
-    	customLanguages: [
-    		// Include languages that provides by Monaco SQL Languages
-    		{
-    			label: 'mysql',
-    			entry: 'monaco-sql-languages/out/esm/mysql/mysql.contribution',
-    			worker: {
-    				id: 'monaco-sql-languages/out/esm/mysql/mySQLWorker',
-    				entry: 'monaco-sql-languages/out/esm/mysql/mysql.worker'
-    			}
-    		},
-    		{
-    			label: 'flinksql',
-    			entry: 'monaco-sql-languages/out/esm/flinksql/flinksql.contribution',
-    			worker: {
-    				id: 'monaco-sql-languages/out/esm/flinksql/flinkSQLWorker',
-    				entry: 'monaco-sql-languages/out/esm/flinksql/flinksql.worker'
-    			}
-    		},
-    		{
-    			label: 'sparksql',
-    			entry: 'monaco-sql-languages/out/esm/sparksql/sparksql.contribution',
-    			worker: {
-    				id: 'monaco-sql-languages/out/esm/sparksql/sparkSQLWorker',
-    				entry: 'monaco-sql-languages/out/esm/sparksql/sparksql.worker'
-    			}
-    		},
-    		{
-    			label: 'hivesql',
-    			entry: 'monaco-sql-languages/out/esm/hivesql/hivesql.contribution',
-    			worker: {
-    				id: 'monaco-sql-languages/out/esm/hivesql/hiveSQLWorker',
-    				entry: 'monaco-sql-languages/out/esm/hivesql/hivesql.worker'
-    			}
-    		},
-    		{
-    			label: 'trinosql',
-    			entry: 'monaco-sql-languages/out/esm/trinosql/trinosql.contribution',
-    			worker: {
-    				id: 'monaco-sql-languages/out/esm/trinosql/TrinoSQLWorker',
-    				entry: 'monaco-sql-languages/out/esm/trinosql/trinosql.worker'
-    			}
-    		},
-    		{
-    			label: 'pgsql',
-    			entry: 'monaco-sql-languages/out/esm/pgsql/pgsql.contribution',
-    			worker: {
-    				id: 'monaco-sql-languages/out/esm/pgsql/PgSQLWorker',
-    				entry: 'monaco-sql-languages/out/esm/pgsql/pgsql.worker'
-    			}
-    		},
-    		{
-    			label: 'plsql',
-    			entry: 'monaco-sql-languages/out/esm/plsql/plsql.contribution',
-    			worker: {
-    				id: 'monaco-sql-languages/out/esm/plsql/plSQLWorker',
-    				entry: 'monaco-sql-languages/out/esm/plsql/plsql.worker'
-    			}
-    		}
-    	]
-    });
+  const monacoWebpackPlugin = new MonacoWebpackPlugin({
+  	features: [], // Include only a subset of the editor features
+  	languages: [], // Include only a subset of the monaco built-in languages
+  	customLanguages: [
+  		// Include languages that provides by Monaco SQL Languages
+  		{
+  			label: 'mysql',
+  			entry: 'monaco-sql-languages/out/esm/mysql/mysql.contribution',
+  			worker: {
+  				id: 'monaco-sql-languages/out/esm/mysql/mySQLWorker',
+  				entry: 'monaco-sql-languages/out/esm/mysql/mysql.worker'
+  			}
+  		},
+  		{
+  			label: 'flinksql',
+  			entry: 'monaco-sql-languages/out/esm/flinksql/flinksql.contribution',
+  			worker: {
+  				id: 'monaco-sql-languages/out/esm/flinksql/flinkSQLWorker',
+  				entry: 'monaco-sql-languages/out/esm/flinksql/flinksql.worker'
+  			}
+  		},
+  		{
+  			label: 'sparksql',
+  			entry: 'monaco-sql-languages/out/esm/sparksql/sparksql.contribution',
+  			worker: {
+  				id: 'monaco-sql-languages/out/esm/sparksql/sparkSQLWorker',
+  				entry: 'monaco-sql-languages/out/esm/sparksql/sparksql.worker'
+  			}
+  		},
+  		{
+  			label: 'hivesql',
+  			entry: 'monaco-sql-languages/out/esm/hivesql/hivesql.contribution',
+  			worker: {
+  				id: 'monaco-sql-languages/out/esm/hivesql/hiveSQLWorker',
+  				entry: 'monaco-sql-languages/out/esm/hivesql/hivesql.worker'
+  			}
+  		},
+  		{
+  			label: 'trinosql',
+  			entry: 'monaco-sql-languages/out/esm/trinosql/trinosql.contribution',
+  			worker: {
+  				id: 'monaco-sql-languages/out/esm/trinosql/TrinoSQLWorker',
+  				entry: 'monaco-sql-languages/out/esm/trinosql/trinosql.worker'
+  			}
+  		},
+  		{
+  			label: 'pgsql',
+  			entry: 'monaco-sql-languages/out/esm/pgsql/pgsql.contribution',
+  			worker: {
+  				id: 'monaco-sql-languages/out/esm/pgsql/PgSQLWorker',
+  				entry: 'monaco-sql-languages/out/esm/pgsql/pgsql.worker'
+  			}
+  		},
+  		{
+  			label: 'plsql',
+  			entry: 'monaco-sql-languages/out/esm/plsql/plsql.contribution',
+  			worker: {
+  				id: 'monaco-sql-languages/out/esm/plsql/plSQLWorker',
+  				entry: 'monaco-sql-languages/out/esm/plsql/plsql.worker'
+  			}
+  		}
+  	]
+  });
 
-    module.exports = {
-    	entry: './index.js',
-    	output: {
-    		path: path.resolve(__dirname, 'dist'),
-    		filename: 'app.js'
-    	},
-    	module: {},
-    	plugins: [monacoEditorPlugin] // Apply monacoWebpackPlugin
-    };
-    ```
+  module.exports = {
+  	entry: './index.js',
+  	output: {
+  		path: path.resolve(__dirname, 'dist'),
+  		filename: 'app.js'
+  	},
+  	module: {},
+  	plugins: [monacoEditorPlugin] // Apply monacoWebpackPlugin
+  };
+  ```
 
 More options of Monaco Editor Webpack Plugin, see [here](https://github.com/microsoft/monaco-editor/tree/main/webpack-plugin#options).
 
@@ -211,88 +211,88 @@ Vite example see <https://github.com/DTStack/monaco-sql-languages/blob/main/webs
 
 1. **Import language contributions**
 
-    ```typescript
-    // Directly import contribution files for languages that don't support codeCompletion.
-    import 'monaco-sql-languages/out/esm/mysql/mysql.contribution';
-    import 'monaco-sql-languages/out/esm/plsql/plsql.contribution';
-    import 'monaco-sql-languages/out/esm/pgsql/pgsql.contribution';
-    import 'monaco-sql-languages/out/esm/sql/sql.contribution';
+   ```typescript
+   // Directly import contribution files for languages that don't support codeCompletion.
+   import 'monaco-sql-languages/out/esm/mysql/mysql.contribution';
+   import 'monaco-sql-languages/out/esm/plsql/plsql.contribution';
+   import 'monaco-sql-languages/out/esm/pgsql/pgsql.contribution';
+   import 'monaco-sql-languages/out/esm/sql/sql.contribution';
 
-    // Import register method for languages that support codeCompletion.
-    import {
-    	registerHiveSQLLanguage,
-    	registerFlinkSQLLanguage,
-    	registerSparkSQLLanguage,
-    	registerTrinoSQLLanguage
-    } from 'monaco-sql-languages';
+   // Import register method for languages that support codeCompletion.
+   import {
+   	registerHiveSQLLanguage,
+   	registerFlinkSQLLanguage,
+   	registerSparkSQLLanguage,
+   	registerTrinoSQLLanguage
+   } from 'monaco-sql-languages';
 
-    // Register language, completionService is not a must.
-    registerFlinkSQLLanguage();
-    registerHiveSQLLanguage();
-    registerSparkSQLLanguage();
-    registerTrinoSQLLanguage();
+   // Register language, completionService is not a must.
+   registerFlinkSQLLanguage();
+   registerHiveSQLLanguage();
+   registerSparkSQLLanguage();
+   registerTrinoSQLLanguage();
 
-    // Or you can import all language contributions at once.
-    // import 'monaco-sql-languages/out/esm/monaco.contribution';
-    ```
+   // Or you can import all language contributions at once.
+   // import 'monaco-sql-languages/out/esm/monaco.contribution';
+   ```
 
 2. **Build a completionService**
 
-    By default, only keywords are included in completionItems, and you can customize your completionItem list via `completionService`.
+   By default, only keywords are included in completionItems, and you can customize your completionItem list via `completionService`.
 
-    ```typescript
-    import { languages } from 'monaco-editor/esm/vs/editor/editor.api';
-    import { CompletionService, ICompletionItem, SyntaxContextType } from 'monaco-sql-languages';
+   ```typescript
+   import { languages } from 'monaco-editor/esm/vs/editor/editor.api';
+   import { CompletionService, ICompletionItem, SyntaxContextType } from 'monaco-sql-languages';
 
-    import { languages } from 'monaco-editor/esm/vs/editor/editor.api';
-    import { CompletionService, ICompletionItem, SyntaxContextType } from 'monaco-sql-languages';
+   import { languages } from 'monaco-editor/esm/vs/editor/editor.api';
+   import { CompletionService, ICompletionItem, SyntaxContextType } from 'monaco-sql-languages';
 
-    const completionService: CompletionService = function (
-    	model,
-    	position,
-    	completionContext,
-    	suggestions
-    ) {
-    	return new Promise((resolve, reject) => {
-    		if (!suggestions) {
-    			return Promise.resolve([]);
-    		}
-    		const { keywords, syntax } = suggestions;
-    		const keywordsCompletionItems: ICompletionItem[] = keywords.map((kw) => ({
-    			label: kw,
-    			kind: languages.CompletionItemKind.Keyword,
-    			detail: 'keyword',
-    			sortText: '2' + kw
-    		}));
+   const completionService: CompletionService = function (
+   	model,
+   	position,
+   	completionContext,
+   	suggestions
+   ) {
+   	return new Promise((resolve, reject) => {
+   		if (!suggestions) {
+   			return Promise.resolve([]);
+   		}
+   		const { keywords, syntax } = suggestions;
+   		const keywordsCompletionItems: ICompletionItem[] = keywords.map((kw) => ({
+   			label: kw,
+   			kind: languages.CompletionItemKind.Keyword,
+   			detail: 'keyword',
+   			sortText: '2' + kw
+   		}));
 
-    		let syntaxCompletionItems: ICompletionItem[] = [];
+   		let syntaxCompletionItems: ICompletionItem[] = [];
 
-    		syntax.forEach((item) => {
-    			if (item.syntaxContextType === SyntaxContextType.DATABASE) {
-    				const databaseCompletions: ICompletionItem[] = []; // some completions about databaseName
-    				syntaxCompletionItems = [...syntaxCompletionItems, ...databaseCompletions];
-    			}
-    			if (item.syntaxContextType === SyntaxContextType.TABLE) {
-    				const tableCompletions: ICompletionItem[] = []; // some completions about tableName
-    				syntaxCompletionItems = [...syntaxCompletionItems, ...tableCompletions];
-    			}
-    		});
+   		syntax.forEach((item) => {
+   			if (item.syntaxContextType === SyntaxContextType.DATABASE) {
+   				const databaseCompletions: ICompletionItem[] = []; // some completions about databaseName
+   				syntaxCompletionItems = [...syntaxCompletionItems, ...databaseCompletions];
+   			}
+   			if (item.syntaxContextType === SyntaxContextType.TABLE) {
+   				const tableCompletions: ICompletionItem[] = []; // some completions about tableName
+   				syntaxCompletionItems = [...syntaxCompletionItems, ...tableCompletions];
+   			}
+   		});
 
-    		return [...syntaxCompletionItems, ...keywordsCompletionItems];
-    	});
-    };
+   		return [...syntaxCompletionItems, ...keywordsCompletionItems];
+   	});
+   };
 
-    registerFlinkSQLLanguage(completionService);
-    ```
+   registerFlinkSQLLanguage(completionService);
+   ```
 
 3. **Create the Monaco Editor instance and specify the language you need**
 
-    ```typescript
-    monaco.editor.create(document.getElementById('container'), {
-    	value: 'select * from tb_test',
-    	language: 'flinksql' // you need
-    });
-    ```
+   ```typescript
+   monaco.editor.create(document.getElementById('container'), {
+   	value: 'select * from tb_test',
+   	language: 'flinksql' // you need
+   });
+   ```
 
 <br/>
 
@@ -302,9 +302,9 @@ Vite example see <https://github.com/DTStack/monaco-sql-languages/blob/main/webs
 
 Monaco SQL Languages provides built-in Monaco Theme that is named `vsPlusTheme`. `vsPlusTheme` inspired by vscode default plus colorTheme and it contains three styles of themes inside:
 
--   `darkTheme`: inherited from Monaco built-in Theme `vs-dark`;
--   `lightTheme`: inherited from Monaco built-in Theme `vs`;
--   `hcBlackTheme`: inherited from Monaco built-in Theme `hc-black`;
+- `darkTheme`: inherited from Monaco built-in Theme `vs-dark`;
+- `lightTheme`: inherited from Monaco built-in Theme `vs`;
+- `hcBlackTheme`: inherited from Monaco built-in Theme `hc-black`;
 
 **Use Monaco SQL Languages built-in vsPlusTheme**
 
@@ -354,32 +354,32 @@ editor.defineTheme('my-theme', myThemeData);
 
 ## Dev: cheat sheet
 
--   initial setup
+- initial setup
 
-    ```shell
-    pnpm install
-    ```
+  ```shell
+  pnpm install
+  ```
 
--   open the dev web
+- open the dev web
 
-    ```shell
-    pnpm watch-esm
-    cd website
-    pnpm install
-    pnpm dev
-    ```
+  ```shell
+  pnpm watch-esm
+  cd website
+  pnpm install
+  pnpm dev
+  ```
 
--   compile
+- compile
 
-    ```shell
-    pnpm compile
-    ```
+  ```shell
+  pnpm compile
+  ```
 
--   run test
-    ```
-    pnpm compile
-    pnpm test
-    ```
+- run test
+  ```
+  pnpm compile
+  pnpm test
+  ```
 
 <br/>
 
